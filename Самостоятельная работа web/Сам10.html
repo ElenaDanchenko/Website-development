@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang = "ru">
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "description" content = "Язык программирования Go" >
+		<meta name = "keywords" content = "программирование, Go, Goland" >
+		<meta name = "author" content = "Данченко Елена" >
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel = "Shortcut Icon" href = "./img/favicon.png" type = "image/x-icon" >
+		
+		<link rel="stylesheet" href="./lib/bootstrap-5.3.0/dist/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="./css/styles_sam10.css">
+		
+		<script src="./lib/bootstrap-5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="./js/Сам10.js"></script>
+		
+		<title>Go (Goland)</title>
+	
+
+	</head>
+	
+	<body>
+		<header>
+		 <!-- заголовок -->
+			<div class = "container-fluid"> 
+				<div class="jumbotron">
+					<h1>Язык программирования Go</h1>
+				</div>				
+			</div>
+			
+			
+			<nav class ="navbar navbar-expand-lg justify-content-center"> <!-- определяем контейнер навигации -->
+				<div class = "container-fluid"> <!-- для горизонтального отступа -->
+					<ul class ="navbar-nav"> <!-- для создания навигации -->					
+						<li class="nav-item">
+							<a href = "Сам1.html"> Сам. 1 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам2.html"> Сам. 2 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам4.html"> Сам. 4 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам5.html"> Сам. 5 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам6.html"> Сам. 6 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам8.html"> Сам. 8 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам9.html"> Сам. 9 </a>
+						</li>
+						<li class="nav-item">
+							<a href = "Сам10.html"> Сам. 10 </a>
+						</li>
+						<li class="nav-item">
+							<div class = "d-flex">
+								<!-- Кнопка-триггер модального окна -->
+								<!--атрибут data-toggle="modal" говорит о том, что кнопка предназначена для открытия окна
+								атрибут data-target="#staticBackdrop", который задает идентификатор модального окна -->
+								<button class="btn btn-secondary ms-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Войти</button>
+								
+							</div>
+						</li>
+					</ul>								
+				</div>
+			</nav>
+
+			
+		<!-- Modal -->
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+				
+					<div class="modal-header">
+						<h2 class="modal-title fs-5" id="staticBackdropLabel">Вход в личный кабинет</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					
+					<div class="modal-body">
+					
+						<form class ="needs-validation" novalidate>
+						  <div class="mb-3">
+							<label class="col-form-label">Имя пользователя:</label>
+							<input type="text" class="form-control" placeholder = "Имя" required>
+							
+							<div class="invalid-feedback">
+								Пожалуйста, введите имя пользователя.
+							</div>
+							
+						  </div>
+						  
+						  <div class="mb-3">
+							<label class="col-form-label">Пароль:</label>
+							<input type="password" class="form-control" placeholder = "Пароль" required>
+							
+							<div class="invalid-feedback">
+								Пожалуйста, введите пароль.
+							</div>
+						  </div
+						  
+						</form>
+						
+					</div>
+					<div class="modal-footer">						
+						<button type="submit"" class="btn btn-primary " id = "btn_login">Войти</button>				
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<!-- Для стандартных сообщений проверки форм Bootstrap вам потребуется добавить логический атрибут novalidate к <form>. Это деактивирует всплывающие сообщения обратной связи, существующие в браузере по умолчанию, но одновременно сохранит доступ JS к API валидации форм.  -->
+		<!-- для отключения отправки форм при наличии недопустимых полей -->
+			<script>
+			(function () {
+				'use strict'
+				
+				<!-- все формы, к которым мы хотим применить пользовательские стили проверки Bootstrap -->
+				const forms = document.querySelectorAll('.needs-validation')
+				
+				<!-- Зацикливайтесь на них и предотвращайте отправку -->
+
+				Array.from(forms)
+				  .forEach(function (form) {
+					form.addEventListener('submit', function (event) {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+				  
+					  form.classList.add('was-validated')
+					}, false)
+				  })
+				})()
+			</script>
+			
+		</header>
+		
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<ul class="nav nav-pills flex-column">
+						  <li class="nav-item">
+							<a href="#otzyv">Отзывы больших компаний о Golang</a>
+						  </li>
+						  <li class="nav-item">
+							<a href="#table">Сравнительная таблица Go vs Py</a>
+						  </li>
+						  <li class="nav-item">
+							<a href="#end">Итог</a>
+						  </li>
+						</ul>
+					</div>
+					
+					<div class="col-sm-8">
+						
+							<p class="h3 text-success"><strong>Golang vs Python — Что выбрать в 2024?</strong></p>
+							<time datetime="2024-03-24">24 марта 2024</time>
+							
+							<figure class="figure">
+								<img src="./img/go_vs_py.png" class="img-fluid img-thumbnail" alt="Go_VS_Python">
+								<figcaption class="figure-caption">В основе хорошего кода лежат навыки разработчика и выбранный им язык программирования. Это неизбежно приводит к некоторому конфликту между программистами не только на уровне квалификации, но и в плане предпочитаемого языка. Примером такого конфликта может стать сравнение таких двух отличных языков программирования, как Golang (Go) и Python.</figcaption>
+							</figure>
+							
+							<p>Golang широко используется ведущими компаниями. По всему миру более миллиона разработчиков работают с Go — его задействуют в таких сферах, как банковское дело, торговля, игры, мультимедиа, технологии и другие отрасли. В число известных предприятий входят PayPal, Capital One, IBM, Salesforce, Twitch, Uber, Dropbox и, конечно, Google.</p>
+							
+							<p class="h3 text-success" id = "otzyv">Отзывы больших компаний о Golang</p>
+							<hr class="bg-danger border-2 border-top border-success" />
+							
+							<figure>
+								<figcaption>
+									<cite>PayPal использует Golang для модернизации и масштабирования:</cite>
+								</figcaption>
+								<blockquote class="blockquote">
+									<p> &laquo;Ценность Go в создании чистого и эффективного кода, который легко масштабируется по мере развертывания программного обеспечения, это делает язык надежным средством поддержки целей PayPal. &raquo;</p>
+								</blockquote>	
+							</figure>
+							
+							<figure>
+								<figcaption>
+									<cite>American Express использует Golang для платежей и переводов:</cite>
+								</figcaption>
+								<blockquote class="blockquote">
+									<p> &laquo;Go предоставляет American Express скорость и масштабируемость, необходимые для сетей платежей и переводов. &raquo;</p>
+								</blockquote>
+							</figure>
+							
+							<figure>
+								<figcaption>
+									<cite>Stream</cite>
+								</figcaption>
+								<blockquote class="blockquote">
+									<p> &laquo; Stream является небольшой командой разработчиков, что обеспечивает каналы и чат для более чем 500 миллионов конечных пользователей. Комбинация Go с великолепной экосистемой, удобной адаптацией для новых программистов, высокой производительностью, надежной поддержкой параллелизма и продуктивной средой разработки делает этот язык отличным выбором.</p>
+								</blockquote>
+
+							</figure>
+							
+							<figure>
+								<figcaption>
+									<cite>Pydio переписали корпоративный обмен файлами на Golang</cite>
+								</figcaption>
+								<blockquote class="blockquote">
+									<p>  &laquo;Pydio, облачное хранилище до Dropbox, превратилось в полноценную платформу Sync-and-Share, приложение привязалось к своему первоначальному техническому стеку: LAMP, как в Linux/Apache/MySQL/PHP.&raquo;</p>
+								</blockquote>				
+							</figure>
+							
+							<figure>
+								<figcaption>
+									<cite>Repustate перенесли API из Python (сначала Django, затем Falcon) в Go:</cite>
+								</figcaption>
+								<blockquote class="blockquote">
+									<p>  &laquo;Миграция сократила количество необходимых экземпляров EC2 на 85% и среднее время ответа на вызов API с 100 до 10 мс. Из-за сходства между Python и Go они смогли быстро переопределить наши модульные тесты, чтобы соответствовать структуре, которая требуется Go, с помощью нескольких простых sed-сценариев.&raquo;</p>
+								</blockquote>				
+							</figure>
+							
+							
+							<p class="h3 text-success" id = "table">Golang vs. Python — Сравнительная таблица</p>
+							<hr class="bg-danger border-2 border-top border-success" />
+							
+							<table class="table table-hover table-success">
+								<thead>
+									<tr>
+									  <th scope="col">Характеристика</th>
+									  <th scope="col">Go</th>
+									  <th scope="col">Python</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									  <th scope="row">Парадигмы</th>
+									  <td>Парадигмы языка Go являются частью процедурными, функциональными и конкурентными.</td>
+									  <td>Парадигмы Python являются объектно-ориентированными, императивными, функциональными и процедурными.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Типизация</th>
+									  <td>Статически типизированный язык.</td>
+									  <td>Динамически типизированный язык.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Фокус</th>
+									  <td>Больше сфокусирован на том, чтобы быть системным языком.</td>
+									  <td>Больше сфокусирован на создании веб-приложений, машинное обучение, обработка данных.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Менеджмент памяти</th>
+									  <td>Go также работает с менеджментом памяти.</td>
+									  <td>Python предлагает менеджмент памяти.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Синтаксис</th>
+									  <td>Синтаксис Go основан на открывающихся и закрывающихся скобках.</td>
+									  <td>Синтаксис Python для выделения блоков кода использует отступы.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Исправление багов</th>
+									  <td>Веб-программирование Go предоставляет несложный способ исправления ошибок.</td>
+									  <td>Python является динамически типизированным, а значит он проверяет наличие багов во время выполнения, тратя при этом больше времени и ресурсов.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Концепты</th>
+									  <td>Предлагает ограниченную поддержку для объектно-ориентированных и функциональных концептов.</td>
+									  <td>Объектно-ориентированное программирование, что поддерживает функциональные концепты.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Исключения</th>
+									  <td>Go не предоставляет исключения.</td>
+									  <td>Python поддерживает исключения.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">ООП</th>
+									  <td>Go не поддерживает объектно-ориентированное программирование. В нем нет классов и объектов.</td>
+									  <td>В Python есть классы и объекты.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Наследование</th>
+									  <td>Go не поддерживает наследование.</td>
+									  <td>Python поддерживает наследование.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Предназначение</th>
+									  <td>Go идеален для системного программирования.</td>
+									  <td>Python является популярным языком, что используется для Data Science.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Классы и объекты</th>
+									  <td>Go не поддерживает объектно-ориентированное программирование. В нем нет классов и объектов.</td>
+									  <td>В Python есть классы и объекты.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Многословность</th>
+									  <td>По сравнению с Python более многословен.</td>
+									  <td>Менее многословен по сравнению с языком Go.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Конкурентность</th>
+									  <td>Поддерживает конкурентность.	</td>
+									  <td>Нет встроенного механизма конкурентности.</td>
+									</tr>
+									
+									<tr>
+									  <th scope="row">Доходы разработчиков</th>
+									  <td>В США разработчики Go получают приблизительно $64,089 в год.</td>
+									  <td>В США средняя зарплата разработчика Python составляет около $120,359 в год.</td>
+									</tr>
+								</tbody>
+							</table>
+							
+							<p id = "end">Таким образом, в большинстве случаев Go выходит на первое место и считается верной альтернативой использованию Python. Разработчики должны выбирать язык программирования, учитывая природу и размер проекта разработки, а также набор своих навыков. <br>
+							Хорошая новость заключается в том, что независимо от выбора, оба языка постоянно развиваются. Хотя Golang может показаться очевидным выбором в большинстве случаев, сообщество Python не бездельничает. Оба языка расширяются и растут. Это означает, что в будущем мы увидим больше функциональности и улучшений.</p>
+
+
+							<cite title="Source Title">Источник: <a href = "https://python-scripts.com/golang-vs-python?ysclid=lu57mftbfx451875785#faster-web" rel="nofollow">Python-scripts.com</a></cite>
+							
+							
+					</div>
+					
+				</div>
+						
+			</div>
+
+		</main>
+		
+		<footer> 
+			<div class = "container-fluid">		
+				<div class="jumbotron">
+					<p> Copyright © 2024. Данченко Елена </p>
+				</div>			
+			</div>
+		</footer>
+
+	</body>
+</html>

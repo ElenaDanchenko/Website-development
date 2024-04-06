@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang = "ru">
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "description" content = "Язык программирования Go" >
+		<meta name = "keywords" content = "программирование, Go, Goland" >
+		<meta name = "author" content = "Данченко Елена" >
+		<link rel = "Shortcut Icon" href = "./img/favicon.png" type = "image/x-icon" >
+		
+		<link rel="stylesheet" href="./css/styles_sam3.css">
+		<script src="./js/Сам7.js"></script>
+		 
+		<title>Go (Goland)</title>
+
+	</head>
+	
+	<body>
+		<header>		
+			<h1>Язык программирования Go</h1>
+			<nav>
+					<ul> 
+						<li><a href = "Сам1.html"> Сам. 1 </a></li>
+						<li><a href = "Сам2.html"> Сам. 2 </a></li>
+						<li><a href = "Сам4.html"> Сам. 4 </a></li>
+						<li><a href = "Сам5.html"> Сам. 5 </a></li>
+						<li><a href = "Сам6.html"> Сам. 6 </a></li>
+						<li><a href = "Сам8.html"> Сам. 8 </a></li>
+						<li><a href = "Сам9.html"> Сам. 9 </a></li>
+						<li><a href = "Сам10.html"> Сам. 10 </a></li>
+					</ul>
+			</nav>
+		</header>
+		
+		<main>
+			
+			<div id = "time"></div>
+			
+			<form action="" method="get" id = "form">
+			
+				<h2 id="01_h2">Анкета</h2>
+
+				<div class = "deletable" id = "name">					
+					<label>Введите имя:<span>*</span><input type="text" name="name" value="Иван" required></label>
+				</div>
+				
+				<div class = "deletable">				
+					<label>Введите фамилию:<span>*</span><input type="text" name="surname" value="Иванов" required></label>
+				</div>
+				
+				<fieldset class = "deletable">
+					Пол:<span>*</span><br>
+					<label><input type="radio" name="gender" value="male" required> Женский<br></label>
+					<label><input type="radio" name="gender" value="female" required> Мужской<br></label>
+				</fieldset>
+				<br>
+				
+				<div class = "deletable">
+					<label>Дата рождения:<span>*</span><input type="date" id = "bday" name = "bday" required></label>
+				</div>
+				
+				<div id = "curse_of_study">
+					<label id = "curse_of_study_for_delete">Курс обучения:<span>*</span><input type = "number" name = "curse_of_study" min="1" max="5" step="1" required></label>
+				</div>
+				
+				
+				<div class = "deletable">
+					<label for = "mySelect">Форма обучения:<span>*</span>
+					<select required id = "mySelect" name = "form_of_study">
+						<option value="" >Выберите форму обучения</option>
+						<option value ="ochno" >очная</option>
+						<option value ="zaochno" >заочная</option><span>*</span>
+					</label>
+					</select>
+				</div>
+				
+				<h2>Вопросы по теме</h2>	
+				
+				<div class = "deletable">
+				<label>Год создания языка Go:  <span>*</span><input id = "question1" type="text" name="question1" minlength = "4" maxlength = "4" autocomplete="off" required></label>
+				</div>
+				
+				<fieldset class = "deletable">
+					Какое существо является логотипом языка Go?<span>*</span><br>				
+					<label><input type="radio" name="question2" value="homyak" required> Хомяк <br></label>
+					<label><input type="radio" name="question2" value="zuwu" required> Зуву<br></label>
+					<label><input type="radio" name="question2" value="doxy" required> Докси <br></label>
+					<label><input type="radio" name="question2" value="gipogriff" required> Гиппогриф<br>
+					<label><input type="radio" name="question2" value="gophers" required> Гофер <br></label>
+				</fieldset class = "deletable">
+				<br>
+				
+				<fieldset class = "deletable">
+					Какие типы данных используются в языке Go?<span>*</span><br>		
+					<label><input type="checkbox" name="question3" value="bool" required> Логический тип данных <br></label>	
+					<label><input type="checkbox" name="question3" value="int"required> Целые числа <br> </label>	
+					<label><input type="checkbox" name="question3" value="float" required> Числа с плавающей точкой <br></label>	
+					<label><input type="checkbox" name="question3" value="complex" required> Комплексные числа <br></label>	
+					<label><input type="checkbox" name="question3" value="string" required> Строки <br></label> 
+				</fieldset>
+				<br>
+				
+				<div id = "new_checkbox" class = "deletable"></div>
+				<br>
+				
+				<div class = "deletable">
+				Комментарий<br>
+				<label for ='feedback' ><textarea id='feedback' name='feedback' rows='4' cols='50'>Замечательный сайт, обязательно приду к вам ещё.</textarea></label> 
+				</div>
+				
+				<div class = "deletable">
+				Файл <input type="file" name="file" value="file">
+				</div>
+				
+				<div>
+				<input type="reset" value="Сбросить">
+				<input type="submit" value="Отправить">
+				</div>
+			</form>
+			
+		</main>
+		
+		<footer> 
+			<p> Copyright © 2024. Данченко Елена </p>
+		</footer>		
+	</body>
+</html>

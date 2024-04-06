@@ -1,0 +1,16 @@
+caption{
+	font-weight:bold;
+}
+
+table{
+	width: 40%;
+	border: 1px solid #dddddd;
+}
+
+table th {
+	border: 1px solid #dddddd;
+}
+
+table td {
+	border: 1px solid #dddddd;
+}

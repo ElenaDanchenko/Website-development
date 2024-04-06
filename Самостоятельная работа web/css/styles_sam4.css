@@ -1,0 +1,94 @@
+body {
+	background:#f1f1f1;
+	font-family:"Times New Roman", Times, serif;
+	width:90%;
+	margin:0;
+	padding:20px;
+}
+
+h1, h2{
+	text-align:center;
+}
+h2{
+	border: 3px solid #92408C;
+}
+header{
+	background:#ffffff;
+	padding:20px;
+}
+
+nav ul{
+	list-style-type: none;
+	overflow:hidden;
+	background:#333;
+	margin:0;
+}
+
+nav li{
+	float:left;
+}
+
+nav li a{
+	 display:block;
+	 color:#FFF;
+	 text-align:center;
+	 text-decoration:none;
+	 padding:14px 16px;
+}
+
+/*Цвет при наведении на элемент*/
+nav li a:hover{ 
+	background:#aaa
+}
+
+article{
+	background:#FDF5DF;
+	padding:20px;
+}
+
+img{
+	float:right;
+	border: 3px dashed  #92408C;
+	opacity:50%;
+
+}
+
+/* Нечетные строки */
+table tbody tr:nth-child(odd){
+	background: #CFCFCF;
+}
+
+th{
+	background: #8D8D8D;
+}
+
+a {
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+article a:visited {
+  color: #8b0000;
+}
+
+article p{
+	overflow: scroll; 
+	width: 280px;
+	height: 100px;
+}
+
+.b_ul {
+	font-weight:bold;
+}
+
+.b_ul li{
+	display: inline;
+}
+footer{
+	background:#ddd;
+	margin-top:80;
+	padding:10px; 
+}

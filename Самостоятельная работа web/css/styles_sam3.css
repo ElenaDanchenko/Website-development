@@ -1,0 +1,67 @@
+body {
+	background:#f1f1f1;
+	font-family:"Times New Roman", Times, serif;
+	width:90%;
+	margin:0;
+	padding:20px;
+}
+
+h1, h2{
+	text-align:center;
+}
+
+header{
+	background:#ffffff;
+	padding:20px;
+}
+
+nav ul{
+	list-style-type: none;
+	overflow:hidden;
+	background:#333;
+	margin:0;
+}
+
+nav li{
+	float:left;
+}
+
+nav li a{
+	 display:block;
+	 color:#FFF;
+	 text-align:center;
+	 text-decoration:none;
+	 padding:14px 16px;
+}
+
+/*Цвет при наведении на элемент*/
+nav li a:hover{ 
+	background:#aaa
+}
+
+article{
+	background:#ffffff;
+	padding:20px;
+}
+
+form {
+	max-width:500px;
+}
+
+span{
+	color:red;
+}
+
+input, select, textarea {
+	margin-bottom:10px;
+}
+
+
+.css {
+	color:darkred;
+}
+footer{
+	background:#ddd;
+	margin-top:80;
+	padding:10px; 
+}
