@@ -1,0 +1,137 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Дешифрование текста</title>
+	</head>
+	
+<body>
+	<button onclick="decryptText()">Раскодировать текст</button><br><br>
+	<textarea id="output" rows="4" cols="50" style="display: none;"></textarea>
+
+	<script>
+		
+		let customCharCodes = {
+		  'А': 1, 'Б': 2, 'В': 3, 'Г': 4, 'Д': 5, 'Е': 6, 'Ё': 7, 'Ж': 8, 'З': 9, 'И': 10,
+		  'Й': 11, 'К': 12, 'Л': 13, 'М': 14, 'Н': 15, 'О': 16, 'П': 17, 'Р': 18, 'С': 19, 'Т': 20,
+		  'У': 21, 'Ф': 22, 'Х': 23, 'Ц': 24, 'Ч': 25, 'Ш': 26, 'Щ': 27, 'Ъ': 28, 'Ы': 29, 'Ь': 30,
+		  'Э': 31, 'Ю': 32, 'Я': 33, 'а': 34, 'б': 35, 'в': 36, 'г': 37, 'д': 38, 'е': 39, 'ё': 40,
+		  'ж': 41, 'з': 42, 'и': 43, 'й': 44, 'к': 45, 'л': 46, 'м': 47, 'н': 48, 'о': 49, 'п': 50,
+		  'р': 51, 'с': 52, 'т': 53, 'у': 54, 'ф': 55, 'х': 56, 'ц': 57, 'ч': 58, 'ш': 59, 'щ': 60,
+		  'ъ': 61, 'ы': 62, 'ь': 63, 'э': 64, 'ю': 65, 'я': 66, ',': 67, '.': 68, '!': 69, '?': 70,
+		  '-': 71, '=': 72, ' ': 73
+		};
+		
+
+		function decryptText() {
+			
+			let rawtext = location.search.replaceAll('%D0%90', 'А')
+			.replaceAll('%D0%91', 'Б')
+			.replaceAll('%D0%92', 'В')
+			.replaceAll('%D0%93', 'Г')
+			.replaceAll('%D0%94', 'Д')
+			.replaceAll('%D0%95', 'Е')
+			.replaceAll('%D0%81', 'Ё')
+			.replaceAll('%D0%96', 'Ж')
+			.replaceAll('%D0%97', 'З')
+			.replaceAll('%D0%98', 'И')
+			.replaceAll('%D0%99', 'Й')
+			.replaceAll('%D0%9A', 'К')
+			.replaceAll('%D0%9B', 'Л')
+			.replaceAll('%D0%9C', 'М')
+			.replaceAll('%D0%9D', 'Н')
+			.replaceAll('%D0%9E', 'О')
+			.replaceAll('%D0%9F', 'П')
+			.replaceAll('%D0%A0', 'Р')
+			.replaceAll('%D0%A1', 'С')
+			.replaceAll('%D0%A2', 'Т')
+			.replaceAll('%D0%A3', 'У')
+			.replaceAll('%D0%A4', 'Ф')
+			.replaceAll('%D0%A5', 'Х')
+			.replaceAll('%D0%A6', 'Ц')
+			.replaceAll('%D0%A7', 'Ч')
+			.replaceAll('%D0%A8', 'Ш')
+			.replaceAll('%D0%A9', 'Щ')
+			.replaceAll('%D0%AA', 'Ъ')
+			.replaceAll('%D0%AB', 'Ы')
+			.replaceAll('%D0%AC', 'Ь')
+			.replaceAll('%D0%AD', 'Э')
+			.replaceAll('%D0%AE', 'Ю')
+			.replaceAll('%D0%AF', 'Я')
+			.replaceAll('%D0%B0', 'а')
+			.replaceAll('%D0%B1', 'б')
+			.replaceAll('%D0%B2', 'в')
+			.replaceAll('%D0%B3', 'г')
+			.replaceAll('%D0%B4', 'д')
+			.replaceAll('%D0%B5', 'е')
+			.replaceAll('%D1%91', 'ё')
+			.replaceAll('%D0%B6', 'ж')
+			.replaceAll('%D0%B7', 'з')
+			.replaceAll('%D0%B8', 'и')
+			.replaceAll('%D0%B9', 'й')
+			.replaceAll('%D0%BA', 'к')
+			.replaceAll('%D0%BB', 'л')
+			.replaceAll('%D0%BC', 'м')
+			.replaceAll('%D0%BD', 'н')
+			.replaceAll('%D0%BE', 'о')
+			.replaceAll('%D0%BF', 'п')
+			.replaceAll('%D1%80', 'р')
+			.replaceAll('%D1%81', 'с')
+			.replaceAll('%D1%82', 'т')
+			.replaceAll('%D1%83', 'у')
+			.replaceAll('%D1%84', 'ф')
+			.replaceAll('%D1%85', 'х')
+			.replaceAll('%D1%86', 'ц')
+			.replaceAll('%D1%87', 'ч')
+			.replaceAll('%D1%88', 'ш')
+			.replaceAll('%D1%89', 'щ')
+			.replaceAll('%D1%8A', 'ъ')
+			.replaceAll('%D1%8B', 'ы')
+			.replaceAll('%D1%8C', 'ь')
+			.replaceAll('%D1%8D', 'э')
+			.replaceAll('%D1%8E', 'ю')
+			.replaceAll('%D1%8F', 'я')
+			.replaceAll('%20', ' ')
+			
+			let info =  rawtext.split("&");
+			let shift = parseInt(info.pop().slice(2));
+			let encryptedText = info.pop().slice(6);															
+			
+			let decryptedText = '';
+			
+			for (let i = 0; i < encryptedText.length; i++) {
+				
+				let char = encryptedText[i];
+				let charCode = customCharCodes[char];
+				
+				if (charCode) {
+					let newCharCode = charCode - shift;
+					
+					if (newCharCode < 1) {
+						newCharCode = 73 - Math.abs(newCharCode);
+					}
+					
+					let decryptedChar = Object.keys(customCharCodes).find(key => customCharCodes[key] === newCharCode);
+					
+				    decryptedText +=  decryptedChar;
+					
+				  } else {				  
+					decryptedText += char;					
+				} 
+			}
+			
+			let textField = document.getElementById("output");
+			textField.innerHTML += decryptedText;
+			
+			if (textField.style.display === 'none') {
+				textField.style.display = 'block';
+			} else {
+			    textField.style.display = 'none';
+			}
+		}
+		
+		</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>3D Pyramid</title>		
+		<link rel="stylesheet" href="Лаб3.css">
+	</head>
+
+	<body> 
+		<div class="pyramid">
+		  <div class="base"></div>
+		  <div class="side one"></div>
+		  <div class="side two"></div>
+		  <div class="side three"></div>
+		  <div class="side four"></div>
+		</div>
+		
+		<script>
+			var x_rotate = parseInt(prompt("Укажите поворот пирамиды по оси X (в градусах):"));
+			var y_rotate = parseInt(prompt("Укажите поворот пирамиды по оси Y (в градусах):"));
+			var z_rotate = parseInt(prompt("Укажите поворот пирамиды по оси Z (в градусах):"));
+			var x = parseInt(prompt("Введите координату X верхнего левого угла прямоугольной области изображения:"));
+			var y = parseInt(prompt("Введите координату Y верхнего левого угла прямоугольной области изображения:"));			
+					
+			let pyramid = document.querySelector('.pyramid');
+			
+			pyramid.style.transform = "rotateY(" + y_rotate + "deg) rotateX("+ x_rotate + "deg) rotateZ(" + z_rotate + "deg)";
+			pyramid.style.left = x + 'px';
+			pyramid.style.top = y + 'px';
+		</script>
+	</body>
+
+</html>

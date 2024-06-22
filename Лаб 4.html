@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Метод парабол</title>		
+	</head>
+
+	<body> 
+		<h1>Метод парабол</h1>
+		  <form id="form">
+		  
+			<label for="a">a:</label>
+			<input type="number" id="a" value="1">
+			<br><br>
+			
+			<label for="b">b:</label>
+			<input type="number" id="b" value="-3">
+			<br><br>
+			
+			<label for="c">c:</label>
+			<input type="number" id="c" value="-13">
+			<br><br>
+			
+			<label for="d">d:</label>
+			<input type="number" id="d" value="-7">
+			<br><br>
+			
+			<button type="submit">Найти корень</button> 
+			<br><br>
+
+		</form>
+		 		 
+		
+		<div id="result"></div>
+		  		
+		<script>
+		
+			 form.addEventListener('submit', (event) => {
+				
+				event.preventDefault();
+			
+				const aa = parseFloat(document.getElementById('a').value);
+				const bb = parseFloat(document.getElementById('b').value);
+				const cc = parseFloat(document.getElementById('c').value);
+				const dd = parseFloat(document.getElementById('d').value);
+				
+				const result = document.getElementById('result');
+			
+				// Задаем начальные значения для x0, x1, x2 и точности e
+				let x0 = 1;
+				let x1 = 2;
+				let x2 = 3;
+				let e = 0.1;
+
+				// Вычисляем левые части уравнения для каждого x
+				let y0 = aa*x0*x0*x0 + bb*x0*x0 + cc*x0 + dd;
+				let y1 = aa*x1*x1*x1 + bb*x1*x1 + cc*x1 + dd;
+				let y2 = aa*x2*x2*x2 + bb*x2*x2 + cc*x2 + dd;
+				
+				// Начинаем цикл while с условием модуля y2 > e
+				
+				while (Math.abs(y2) > e) {
+				
+					// Вычисляем коэффициенты a, b, c квадратного уравнения
+					
+					let a = (((y0 - y1)/(x0 - x1)) - ((y1 - y2)/(x1 - x2)))/(x0 - x2);
+
+					let b = (y1 - y2)/(x1 - x2) - (x1 + x2) * ((y0 - y1)/(x0 - x1) - (y1 - y2)/(x1 - x2))/(x0-x2);
+
+					let c = y2 - x2*(y1 - y2)/(x1 - x2) + x1 * x2 * ((y0 - y1)/(x0 - x1) - (y1 - y2)/(x1 - x2))/(x0-x2);
+
+					// Находим корни квадратного уравнения
+					
+					let x3 = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a);
+					let x4 = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / (2 * a);
+
+					
+					x0 = x1;
+					x1 = x2;
+					y0 = y1;
+					y1 = y2;
+					
+					// Сравниваем модули корней и заменяем x2 на корень с наименьшим модулем
+					
+					if (Math.abs(x3) < Math.abs(x4)) {
+						x2 = x3;						
+					} else {					
+						x2 = x4;
+					}
+
+					// Обновляем значения y для нового x2
+					
+					y2 = aa*x2*x2*x2 + bb*x2*x2 + cc*x2 + dd;
+				}
+
+				// Выводим значение корня x2, которое является решением уравнения
+				
+				result.innerHTML = 'Корень:' + x2.toFixed(2);
+			})
+			
+		</script>
+	</body>
+
+</html>
